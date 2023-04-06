@@ -8,16 +8,16 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.DriverManager;
 
 import java.time.Duration;
 
 public class Notifications {
 
-    private WebDriver driver;
-    private WebDriverWait webDriverWait;
+    private final WebDriver driver = DriverManager.getInstance();
+    private final WebDriverWait webDriverWait;
 
-    public Notifications(WebDriver driver) {
-        this.driver = driver;
+    public Notifications() {
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
